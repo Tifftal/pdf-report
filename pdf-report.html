@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Автоматическая аналитика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <img src="/assets/Logo.svg">
+            <div class="title">
+                аналитика по квартире
+            </div>
+        </header>
+        <div class="main-info">
+            <div class="main-info-address">
+                <h1>Новый Зыковский проезд, д. 5</h1>
+                <p>Москва, САО, р-н Аэропорт</p>
+                <div class="main-info-address-subway">
+                    <img src="/assets/Subway.svg">
+                    <p>Петровский парк</p>
+                </div>
+            </div>
+            <img src="/assets/Address.png">
+        </div>
+        <div class="about-object">
+            <div class="title">
+                об объекте
+            </div>
+            <div class="about-object-info">
+                <div class="about-object-info-item">
+                    <div class="about-object-info-item-value">
+                        <h2>
+                            3
+                        </h2>
+                        <h3>
+                            -й этаж
+                        </h3>
+                    </div>
+                    <p>Расположение <br /> квартиры</p>
+                </div>
+                <div class="about-object-info-item">
+                    <div class="about-object-info-item-value">
+                        <h2>
+                            40.6
+                        </h2>
+                        <h3>
+                            &nbsp;м<sup>2</sup>
+                        </h3>
+                    </div>
+                    <p>Общая <br /> площадь</p>
+                </div>
+                <div class="about-object-info-item">
+                    <div class="about-object-info-item-value">
+                        <h2>
+                            2
+                        </h2>
+                        <h3>
+                            -комн.
+                        </h3>
+                    </div>
+                    <p>Количество <br /> комнат</p>
+                </div>
+                <div class="about-object-info-item">
+                    <div class="about-object-info-item-value">
+                        <h2>
+                            34
+                        </h2>
+                        <h3>
+                            &nbsp;года
+                        </h3>
+                    </div>
+                    <p>Возраст <br /> дома</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-house">
+            <div class="title">
+                о доме
+            </div>
+            <div class="about-house-info">
+                <div class="about-house-info-item">
+                    <div class="about-house-info-item-header">
+                        <div>
+                            <img src="/assets/Crane.svg">
+                        </div>
+                        <div>
+                            <h2>1990 г.</h2>
+                            <p>Год постройки дома</p>
+                        </div>
+                    </div>
+                    <div class="about-house-info-item-body">
+                        <div class="about-house-info-item-body-spectr">
+                            <img src="/assets/Spectr.svg">
+                            <img src="/assets/Arrow.svg" data-deg="60" class="rotating-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-house-info-item">
+                    <div class="about-house-info-item-header">
+                        <div>
+                            <img src="/assets/Map.svg">
+                        </div>
+                        <div>
+                            <h2>2000 г.</h2>
+                            <p>Средний год <br />постройки домов <br />в локации</p>
+                        </div>
+                    </div>
+                    <div class="about-house-info-item-body">
+                        <div class="about-house-info-item-body-spectr">
+                            <img src="/assets/Spectr.svg">
+                            <img src="/assets/Arrow.svg" data-deg="110" class="rotating-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-house-info-item">
+                    <div class="about-house-info-item-header">
+                        <div>
+                            <img src="/assets/Speed.svg">
+                        </div>
+                        <div>
+                            <h2>30%</h2>
+                            <p>Износ дома</p>
+                        </div>
+                    </div>
+                    <div class="about-house-info-item-body">
+                        <div class="about-house-info-item-body-spectr">
+                            <img src="/assets/Spectr.svg">
+                            <img src="/assets/Arrow.svg" data-deg="140" class="rotating-arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const arrows = document.querySelectorAll('.rotating-arrow');
+
+        arrows.forEach(arrow => {
+            let deg = arrow.getAttribute('data-deg');
+            arrow.style.transform = `rotate(${deg}deg)`;
+        });
+    </script>
+</body>
+
+</html>
