@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Involve";
-    src: url("fonts/Involve-Regular.ttf") format("ttf");
+    src: url("../fonts/Involve-Regular.ttf") format("ttf");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Involve";
-    src: url("fonts/Involve-Medium.ttf") format("ttf");
+    src: url("../fonts/Involve-Medium.ttf") format("ttf");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Involve";
-    src: url("fonts/Involve-SemiBold.ttf") format("ttf");
+    src: url("../fonts/Involve-SemiBold.ttf") format("ttf");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -27,6 +27,11 @@
     --color-text: #333333;
     --color-opacity-text: color-mix(in oklab, #333333 40%, transparent);
     --color-primary-text: #7B51F7;
+    --color-predict: #52F7BB;
+    --color-progress-bg: #E5E5E5;
+    --color-progress-bar: linear-gradient(to right, var(--color-left-flag), #F8C920, var(--color-right-flag));
+    --color-left-flag: #6EC921;
+    --color-right-flag: #F00D01;
 }
 
 p,
@@ -41,6 +46,7 @@ body {
     font-family: Involve;
     font-weight: 400;
     background-color: white;
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,9 +57,95 @@ body {
 
 .main-container {
     background-color: var(--bg-color);
-    width: 595px;
     padding: 25px;
+    width: 595px;
+    box-sizing: border-box;
 }
+
+/* Стили для повторяющихся компонентов */
+
+.title {
+    background-color: var(--color-primary-text);
+    padding: 1px 10px;
+    padding-top: 3px;
+    width: fit-content;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 18px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spectr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.spectr img:first-child {
+    position: absolute;
+    bottom: 0;
+}
+
+.spectr img:last-child {
+    right: calc(50% - 3px);
+    position: absolute;
+    bottom: -2px;
+    transform-origin: calc(100% - 3px) 50%;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.icon {
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+
+.icon img {
+    width: 14px;
+    height: 14px;
+}
+
+.big-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    border-radius: 11px;
+}
+
+.big-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.absolute-icon {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+}
+
+/* Остальное */
+
+/* Заголовок */
 
 header {
     padding-bottom: 25px;
@@ -64,14 +156,15 @@ header {
     border-bottom: 0.5px solid var(--color-opacity-text);
 }
 
-header .title {
+header .main-container-title {
     padding: 5px 20px;
     border: 1px solid var(--color-text);
     border-radius: 18px;
     font-weight: 500;
-    color: var(--color-text);
     font-size: 16px;
 }
+
+/* Основная инвормация */
 
 .main-info {
     padding: 25px 0;
@@ -122,10 +215,11 @@ header .title {
 }
 
 .main-info-address-subway p {
-    color: var(--color-text);
     font-size: 14px;
     padding-top: 4px;
 }
+
+/* Об объекте */
 
 .about-object {
     display: flex;
@@ -133,21 +227,6 @@ header .title {
     gap: 25px;
     padding: 25px 0;
     border-bottom: 0.5px solid var(--color-opacity-text);
-}
-
-.about-object .title {
-    background-color: var(--color-primary-text);
-    padding: 1px 10px;
-    padding-top: 3px;
-    width: fit-content;
-    color: white;
-    font-weight: 400;
-    font-size: 14px;
-    border-radius: 18px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .about-object-info {
@@ -169,7 +248,6 @@ header .title {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    color: var(--color-text);
 }
 
 .about-object-info-item-value h2 {
@@ -189,27 +267,14 @@ header .title {
     font-size: 14px;
 }
 
+/* О доме */
+
 .about-house {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 25px 0;
     border-bottom: 0.5px solid var(--color-opacity-text);
-}
-
-.about-house .title {
-    background-color: var(--color-primary-text);
-    padding: 1px 10px;
-    padding-top: 3px;
-    width: fit-content;
-    color: white;
-    font-weight: 400;
-    font-size: 14px;
-    border-radius: 18px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .about-house-info {
@@ -236,22 +301,6 @@ header .title {
     gap: 10px;
 }
 
-.about-house-info-item-header div:first-child {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-color);
-    border-radius: 8px;
-}
-
-.about-house-info-item-header div:first-child img {
-    width: 14px;
-    height: 14px;
-}
-
 .about-house-info-item-header div:last-child {
     display: flex;
     flex-direction: column;
@@ -261,7 +310,6 @@ header .title {
 .about-house-info-item-header div:last-child h2 {
     font-size: 22px;
     font-weight: 600;
-    color: var(--color-text);
 }
 
 .about-house-info-item-header div:last-child p {
@@ -274,27 +322,820 @@ header .title {
     margin-bottom: 3px;
 }
 
-.about-house-info-item-body-spectr {
+/* Индекс ликвидности в доме */
+
+.liquidity-index {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.liquidity-index-first {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 18px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 47px;
+    padding: 29px 38px;
+}
+
+.liquidity-index-first-spectr {
+    height: 82px;
+    min-width: 164px;
+    position: relative;
+}
+
+.liquidity-index-first p {
+    font-size: 13px;
+    line-height: 1.25;
+}
+
+.liquidity-index-second {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    height: 111px;
+}
+
+.liquidity-index-second-item {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.liquidity-index-second-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.liquidity-index-second-item-content h2 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.liquidity-index-second-item-content-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.liquidity-index-second-item-content-col div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+}
+
+.liquidity-index-second-item-content-col div p {
+    color: var(--color-opacity-text);
+    font-size: 14px;
+}
+
+.liquidity-index-second-item-content-col div h3 {
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.liquidity-index-third {
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liquidity-index-third-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.liquidity-index-third-item-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.liquidity-index-third-item-header h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.liquidity-index-third-item-header h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.liquidity-index-third-item-body {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.liquidity-index-third-item-body p {
+    font-size: 14;
+    color: var(--color-opacity-text);
+}
+
+.liquidity-index-third-item-body h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-primary-text);
+    text-decoration: underline;
+}
+
+.liquidity-index-third-spectr {
+    height: 67px;
+    min-width: 128px;
+    position: relative;
+}
+
+.liquidity-index-fourth {
+    display: grid;
+    grid-template-columns: 33% 67%;
+    grid-column-gap: 2px;
+}
+
+.liquidity-index-fourth-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    border-radius: 18px;
+    padding: 12px 15px;
+}
+
+.liquidity-index-fourth-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.liquidity-index-fourth-item div:last-child h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.liquidity-index-fourth-item div:last-child h2 b {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.liquidity-index-fourth-item div:last-child p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.liquidity-index-fifth {
+    display: grid;
+    grid-template-columns: 67% 33%;
+    grid-column-gap: 2px;
+    margin-top: 2px;
+}
+
+.liquidity-index-fifth-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    border-radius: 18px;
+    padding: 12px 15px;
+}
+
+.liquidity-index-fifth-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.liquidity-index-fifth-item div:last-child h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.liquidity-index-fifth-item div:last-child h2 b {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.liquidity-index-fifth-item div:last-child p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.liquidity-index-sixth {
+    margin-top: 2px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    position: relative;
+    padding: 15px 10px 3px 10px;
+}
+
+.liquidity-index-sixth-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 21px;
+}
+
+.liquidity-index-sixth-item-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.liquidity-index-sixth-item-header h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.liquidity-index-sixth-item-header h2 b {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.liquidity-index-sixth-item-header p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+    max-width: 120px;
+    text-align: center;
+}
+
+.liquidity-index-sixth-spectr {
+    height: 79px;
+    min-width: 157px;
+    position: relative;
+}
+
+.liquidity-index-seventh {
+    margin-top: 2px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 40% calc(60% - 28px);
+    grid-column-gap: 28px;
+    align-items: flex-start;
     justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px 10px 3px 10px;
+}
+
+.liquidity-index-seventh-item {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.liquidity-index-seventh-item-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 31px;
+}
+
+.liquidity-index-seventh-item-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.liquidity-index-seventh-item-header h2 {
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.liquidity-index-seventh-item-header p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.liquidity-index-seventh-spectr {
+    height: 72px;
+    min-width: 143px;
+    position: relative;
+}
+
+.liquidity-index-seventh-text {
+    padding-top: 7px;
+    line-height: 1.25;
+    font-size: 13px;
+    max-width: 277px;
+}
+
+/* Аналогичные объявления */
+
+.analogue {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0 19px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.analogue-first {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+
+.analogue-first-item {
+    background-color: white;
+    border-radius: 18px;
+    width: 50%;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.analogue-first-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.analogue-first-item div:last-child h2 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.analogue-first-item div:last-child h2 b {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.analogue-first-item div:last-child p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.analogue-third {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 18px;
+    padding: 16px 15px;
+}
+
+.analogue-third-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 17px;
+}
+
+.analogue-third-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.analogue-third-header h2 b {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.analogue-third-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analogue-third-table thead tr th {
+    color: var(--color-opacity-text);
+    font-weight: 400;
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.analogue-third-table tr {
+    text-align: right;
+}
+
+.analogue-third-table tr td:first-child {
+    text-align: left;
+}
+
+.analogue-third-table tr td:first-child a {
+    color: var(--color-primary-text);
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.analogue-third-table tr td {
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom: 0.2px solid var(--color-opacity-text);
+    padding: 5px 0;
+}
+
+.analogue-third-table tr:last-child td {
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom: none;
+    padding: 5px 0;
+}
+
+/* Описание из Циан */
+
+.cian {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0 19px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.cian-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 10px 17px 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.cian-item-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cian-item-body-header {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cian-item-body-header div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cian-item-body-header div h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cian-item-body-header div h2 b {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cian-item-body-header div p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.cian-item-body-text {
+    margin: 25px 0 31px 0;
+    line-height: 1.25;
+    font-size: 12px;
+}
+
+.cian-item-body a {
+    color: var(--color-primary-text);
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+/* История продажи квартиры */
+
+.history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.history-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 14px 15px 19px 15px;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.history-item p {
+    font-size: 12px;
+    line-height: 1.25;
+    max-width: 477px;
+}
+
+.history-item-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-item-table thead tr th {
+    color: var(--color-opacity-text);
+    font-weight: 400;
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.history-item-table tr {
+    text-align: right;
+}
+
+.history-item-table tr td:first-child {
+    text-align: left;
+}
+
+.history-item-table tr td:first-child a {
+    color: var(--color-primary-text);
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.history-item-table tr td {
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom: 0.2px solid var(--color-opacity-text);
+    padding: 5px 0;
+}
+
+.history-item-table tr:last-child td {
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom: none;
+    padding: 5px 0;
+}
+
+/* Прогноз продажи квартиры */
+
+.prediction {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.prediction-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.prediction-body-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: space-between;
+    border-radius: 18px;
+}
+
+.prediction-body-item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.prediction-body-item-header h2 {
+    font-weight: 500;
+}
+
+.prediction-body-item-header h2 b {
+    font-weight: 500;
+}
+
+.prediction-body-item-header p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-opacity-text);
+}
+
+.prediction-body-item-spectr {
+    height: 60px;
+    min-width: 120px;
+    position: relative;
+}
+
+.prediction-body-item-days {
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-opacity-text);
+    font-size: 12px;
+}
+
+.prediction-body .prediction-body-item:nth-child(1) {
+    background-color: white;
+    height: 139px;
+}
+
+.prediction-body .prediction-body-item:nth-child(1) .prediction-body-item-header h2 {
+    font-size: 16px;
+}
+
+.prediction-body .prediction-body-item:nth-child(1) .prediction-body-item-header h2 b {
+    font-size: 13px;
+}
+
+.prediction-body .prediction-body-item:nth-child(2) .prediction-body-item-header h2 {
+    font-size: 21px;
+}
+
+.prediction-body .prediction-body-item:nth-child(2) .prediction-body-item-header h2 b {
+    font-size: 14px;
+}
+
+.prediction-body .prediction-body-item:nth-child(2) .prediction-body-item-header p {
+    margin-bottom: 1px;
+}
+
+.prediction-body .prediction-body-item:nth-child(3) .prediction-body-item-header h2 {
+    font-size: 24px;
+}
+
+.prediction-body .prediction-body-item:nth-child(3) .prediction-body-item-header h2 b {
+    font-size: 15px;
+}
+
+.prediction-body .prediction-body-item:nth-child(3) .prediction-body-item-header p {
+    margin-bottom: 2px;
+}
+
+.prediction-body-item-header h2 b {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.prediction-body .prediction-body-item:nth-child(2) {
+    background-color: color-mix(in oklab, var(--color-predict) 10%, transparent);
+    outline: 1px solid color-mix(in oklab, var(--color-predict) 40%, transparent);
+    outline-offset: -1px;
+    height: 159px;
+}
+
+.prediction-body .prediction-body-item:nth-child(3) {
+    background-color: color-mix(in oklab, var(--color-predict) 30%, transparent);
+    outline: 1px solid var(--color-predict);
+    outline-offset: -1px;
+    height: 179px;
+}
+
+/* Оценка рыночной стоимости квартиры */
+
+.rate {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 0;
+    border-bottom: 0.5px solid var(--color-opacity-text);
+}
+
+.rate-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 20px 30px 20px;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.rate-body h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.rate-body h2 b {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.rate-body-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rate-body-progress-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rate-body-progress-title h3 {
+    font-size: 14px;
+    color: var(--color-opacity-text);
+    font-weight: 400;
+}
+
+.rate-body-progress-body {
+    height: 40px;
+    width: 100%;
+    background-color: var(--color-progress-bg);
+    border-radius: 18px;
+    position: relative;
+}
+
+.rate-body-progress-body-bar {
+    position: absolute;
+    height: 40px;
+    background: var(--color-progress-bar);
+    width: 70%;
+    left: 15%;
+}
+
+.rate-body-progress-footer {
+    display: flex;
+    flex-direction: row;
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
-.about-house-info-item-body-spectr img:first-child {
+.rate-body-progress-footer-item-left {
     position: absolute;
-    bottom: 0;
+    height: 14px;
+    left: 15%;
+    border-left: 2px solid var(--color-left-flag);
 }
 
-.about-house-info-item-body-spectr img:last-child {
-    right: calc(50% - 3px);
+.rate-body-progress-footer-item-left p {
+    padding-left: 8px;
+    font-size: 12px;
+    color: var(--color-opacity-text);
+    padding-top: 2px;
+}
+
+.rate-body-progress-footer-item-right {
     position: absolute;
-    bottom: -2px;
-    transform-origin: calc(100% - 3px) 50%;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
-    z-index: 1;
+    height: 14px;
+    right: 15%;
+    border-right: 2px solid var(--color-right-flag);
+}
+
+.rate-body-progress-footer-item-right p {
+    padding-right: 8px;
+    font-size: 12px;
+    color: var(--color-opacity-text);
+    padding-top: 2px;
+}
+
+/* Футер */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+footer p {
+    color: var(--color-opacity-text);
+    font-size: 10px;
 }

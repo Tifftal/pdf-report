@@ -2,15 +2,17 @@
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>Автоматическая аналитика</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="main-container">
         <header>
-            <img src="/assets/Logo.svg">
-            <div class="title">
+            <img src="./assets/Logo.svg">
+            <div class="main-container-title">
                 аналитика по квартире
             </div>
         </header>
@@ -19,11 +21,11 @@
                 <h1>Новый Зыковский проезд, д. 5</h1>
                 <p>Москва, САО, р-н Аэропорт</p>
                 <div class="main-info-address-subway">
-                    <img src="/assets/Subway.svg">
+                    <img src="./assets/Subway.svg">
                     <p>Петровский парк</p>
                 </div>
             </div>
-            <img src="/assets/Address.png">
+            <img src="./assets/Address.png">
         </div>
         <div class="about-object">
             <div class="title">
@@ -83,8 +85,8 @@
             <div class="about-house-info">
                 <div class="about-house-info-item">
                     <div class="about-house-info-item-header">
-                        <div>
-                            <img src="/assets/Crane.svg">
+                        <div class="icon">
+                            <img src="./assets/Crane.svg">
                         </div>
                         <div>
                             <h2>1990 г.</h2>
@@ -92,16 +94,16 @@
                         </div>
                     </div>
                     <div class="about-house-info-item-body">
-                        <div class="about-house-info-item-body-spectr">
-                            <img src="/assets/Spectr.svg">
-                            <img src="/assets/Arrow.svg" data-deg="60" class="rotating-arrow">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg">
+                            <img src="./assets/Arrow.svg" data-deg="60" class="rotating-arrow">
                         </div>
                     </div>
                 </div>
                 <div class="about-house-info-item">
                     <div class="about-house-info-item-header">
-                        <div>
-                            <img src="/assets/Map.svg">
+                        <div class="icon">
+                            <img src="./assets/Map.svg">
                         </div>
                         <div>
                             <h2>2000 г.</h2>
@@ -109,16 +111,16 @@
                         </div>
                     </div>
                     <div class="about-house-info-item-body">
-                        <div class="about-house-info-item-body-spectr">
-                            <img src="/assets/Spectr.svg">
-                            <img src="/assets/Arrow.svg" data-deg="110" class="rotating-arrow">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg">
+                            <img src="./assets/Arrow.svg" data-deg="110" class="rotating-arrow">
                         </div>
                     </div>
                 </div>
                 <div class="about-house-info-item">
                     <div class="about-house-info-item-header">
-                        <div>
-                            <img src="/assets/Speed.svg">
+                        <div class="icon">
+                            <img src="./assets/Speed.svg">
                         </div>
                         <div>
                             <h2>30%</h2>
@@ -126,24 +128,496 @@
                         </div>
                     </div>
                     <div class="about-house-info-item-body">
-                        <div class="about-house-info-item-body-spectr">
-                            <img src="/assets/Spectr.svg">
-                            <img src="/assets/Arrow.svg" data-deg="140" class="rotating-arrow">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg">
+                            <img src="./assets/Arrow.svg" data-deg="140" class="rotating-arrow">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="liquidity-index">
+            <div class="title">
+                индекс ликвидности в доме
+            </div>
+            <div class="liquidity-index-first">
+                <div class="liquidity-index-first-spectr">
+                    <div class="spectr">
+                        <img src="./assets/Spectr.svg" style="width: 163px; height: 82px;">
+                        <img src="./assets/Arrow.svg" style="width: 67px; height: 8.15px;" data-deg="110"
+                            class="rotating-arrow">
+                    </div>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                </p>
+            </div>
+            <div class="liquidity-index-second">
+                <div class="liquidity-index-second-item">
+                    <div class="icon">
+                        <img src="./assets/HouseSale.svg">
+                    </div>
+                    <div class="liquidity-index-second-item-content">
+                        <h2>Средняя стоимость</h2>
+                        <div style="display: flex; flex-direction: row; gap: 20px; width: 100%;">
+                            <div class="liquidity-index-second-item-content-col">
+                                <div>
+                                    <p>1-к:</p>
+                                    <h3>14,5 млн</h3>
+                                </div>
+                                <div>
+                                    <p>2-к:</p>
+                                    <h3>19,1 млн</h3>
+                                </div>
+                            </div>
+                            <div class="liquidity-index-second-item-content-col">
+                                <div>
+                                    <p>3-к:</p>
+                                    <h3>26,7 млн</h3>
+                                </div>
+                                <div>
+                                    <p>4-к:</p>
+                                    <h3>нет</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="liquidity-index-second-item">
+                    <div class="icon">
+                        <img src="./assets/HouseSale.svg">
+                    </div>
+                    <div class="liquidity-index-second-item-content">
+                        <h2>Платежи по ипотеке</h2>
+                        <div style="display: flex; flex-direction: row; gap: 20px; width: 100%;">
+                            <div class="liquidity-index-second-item-content-col">
+                                <div>
+                                    <p>10%:</p>
+                                    <h3 class="formatted-number">10000</h3>
+                                </div>
+                                <div>
+                                    <p>20%:</p>
+                                    <h3 class="formatted-number">20000</h3>
+                                </div>
+                            </div>
+                            <div class="liquidity-index-second-item-content-col">
+                                <div>
+                                    <p>30%:</p>
+                                    <h3 class="formatted-number">30000</h3>
+                                </div>
+                                <div>
+                                    <p>40%:</p>
+                                    <h3 class="formatted-number">40000</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="liquidity-index-third">
+                <div class="liquidity-index-third-item">
+                    <div class="icon">
+                        <img src="./assets/HouseSale.svg">
+                    </div>
+                    <div>
+                        <div class="liquidity-index-third-item-header">
+                            <h2>5</h2>
+                            <h3>&nbsp;лет</h3>
+                        </div>
+                        <div class="liquidity-index-third-item-body">
+                            <p>Срок окупаемости квартиры</p>
+                            <h3>12% годовых</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="liquidity-index-third-spectr">
+                    <div class="spectr">
+                        <img src="./assets/Spectr.svg" style="width: 128px; height: 67px;">
+                        <img src="./assets/Arrow.svg" style="width: 53px; height: 6.4px;" data-deg="100"
+                            class="rotating-arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="liquidity-index-fourth">
+                <div class="liquidity-index-fourth-item">
+                    <div class="big-icon">
+                        <img src="./assets/Ruble.svg">
+                    </div>
+                    <div>
+                        <h2><b>5</b>&nbsp;квартир</h2>
+                        <p>В продаже сейчас</p>
+                    </div>
+                </div>
+                <div class="liquidity-index-fourth-item">
+                    <div class="big-icon">
+                        <img src="./assets/Calendar.svg">
+                    </div>
+                    <div>
+                        <h2><b>120</b>&nbsp;дней</h2>
+                        <p>Средний срок продажи объекта</p>
+                    </div>
+                </div>
+            </div>
+            <div class="liquidity-index-fifth">
+                <div class="liquidity-index-fifth-item">
+                    <div class="big-icon">
+                        <img src="./assets/Hands.svg">
+                    </div>
+                    <div>
+                        <h2><b>50</b>&nbsp;квартир</h2>
+                        <p>Было продано за последние 2 года</p>
+                    </div>
+                </div>
+                <div class="liquidity-index-fifth-item">
+                    <div class="big-icon">
+                        <img src="./assets/Hands.svg">
+                    </div>
+                    <div>
+                        <h2><b>>100</b>&nbsp;дней</h2>
+                        <p>Средняя экспозиция</p>
+                    </div>
+                </div>
+            </div>
+            <div class="liquidity-index-sixth">
+                <div class="icon absolute-icon">
+                    <img src="./assets/HouseSale.svg">
+                </div>
+                <div class="liquidity-index-sixth-item">
+                    <div class="liquidity-index-sixth-item-header">
+                        <h2><b>50</b>&nbsp;тыс. руб.</h2>
+                        <p>Средняя арендная ставка в доме</p>
+                    </div>
+                    <div class="liquidity-index-sixth-spectr">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg" style="width: 157px; height: 79px;">
+                            <img src="./assets/Arrow.svg" style="width: 65px; height: 7.85px;" data-deg="50"
+                                class="rotating-arrow">
+                        </div>
+                    </div>
+                </div>
+                <div class="liquidity-index-sixth-item">
+                    <div class="liquidity-index-sixth-item-header">
+                        <h2><b>70</b>&nbsp;тыс. руб.</h2>
+                        <p>Средняя арендная ставка в районе</p>
+                    </div>
+                    <div class="liquidity-index-sixth-spectr">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg" style="width: 157px; height: 79px;">
+                            <img src="./assets/Arrow.svg" style="width: 65px; height: 7.85px;" data-deg="110"
+                                class="rotating-arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="liquidity-index-seventh">
+                <div class="liquidity-index-seventh-item">
+                    <div class="icon">
+                        <img src="./assets/Map.svg">
+                    </div>
+                    <div class="liquidity-index-seventh-item-body">
+                        <div class="liquidity-index-seventh-item-header">
+                            <h2>2000 г.</h2>
+                            <p>Средний год постройки домов в локации</p>
+                        </div>
+                        <div class="liquidity-index-seventh-spectr">
+                            <div class="spectr">
+                                <img src="./assets/Spectr.svg" style="width: 143px; height: 72px;">
+                                <img src="./assets/Arrow.svg" style="width: 59px; height: 7.15px;" data-deg="125"
+                                    class="rotating-arrow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="liquidity-index-seventh-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                </p>
+            </div>
+            <div class="liquidity-index-seventh">
+                <div class="liquidity-index-seventh-item">
+                    <div class="icon">
+                        <img src="./assets/Bag.svg">
+                    </div>
+                    <div class="liquidity-index-seventh-item-body">
+                        <div class="liquidity-index-seventh-item-header">
+                            <h2>XX</h2>
+                            <p>Плотность застройки в радиусе 500м</p>
+                        </div>
+                        <div class="liquidity-index-seventh-spectr">
+                            <div class="spectr">
+                                <img src="./assets/Spectr.svg" style="width: 143px; height: 72px;">
+                                <img src="./assets/Arrow.svg" style="width: 59px; height: 7.15px;" data-deg="65"
+                                    class="rotating-arrow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="liquidity-index-seventh-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                </p>
+            </div>
+        </div>
+        <div class="analogue">
+            <div class="title">
+                аналогичные объявления
+            </div>
+            <div class="analogue-first" style="margin-top: 10px;">
+                <div class="analogue-first-item">
+                    <div class="big-icon">
+                        <img src="./assets/Search.svg">
+                    </div>
+                    <div>
+                        <h2>5</h2>
+                        <p>Активных конкурентов</p>
+                    </div>
+                </div>
+                <div class="analogue-first-item">
+                    <div class="big-icon">
+                        <img src="./assets/Calendar.svg">
+                    </div>
+                    <div>
+                        <h2>150<b>&nbsp;дней</b></h2>
+                        <p>Средний срок продажи</p>
+                    </div>
+                </div>
+            </div>
+            <div class="analogue-first" style="margin-top: 2px;">
+                <div class="analogue-first-item">
+                    <div class="big-icon">
+                        <img src="./assets/Ruble.svg">
+                    </div>
+                    <div>
+                        <h2>17<b>&nbsp;млн руб.</b></h2>
+                        <p>Средняя стоимость объектов</p>
+                    </div>
+                </div>
+                <div class="analogue-first-item">
+                    <div class="big-icon">
+                        <img src="./assets/Hands.svg">
+                    </div>
+                    <div>
+                        <h2>15<b>&nbsp;квартир</b></h2>
+                        <p>Было продано за 2 года</p>
+                    </div>
+                </div>
+            </div>
+            <div class="analogue-third" style="margin-top: 2px;">
+                <div class="analogue-third-header">
+                    <div class="big-icon">
+                        <img src="./assets/Ruble.svg">
+                    </div>
+                    <h2>Проданные аналоги<b>&nbsp;менее, чем за 75 дней</b></h2>
+                </div>
+                <table class="analogue-third-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">объекты</th>
+                            <th style="text-align: right;">цена, млн</th>
+                            <th style="text-align: right;">кол-во дней продажи</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="cian">
+            <div class="title">
+                аналогичные объявления
+            </div>
+            <div class="cian-item">
+                <div class="big-icon">
+                    <img src="./assets/Cian.svg">
+                </div>
+                <div class="cian-item-body">
+                    <div class="cian-item-body-header">
+                        <div>
+                            <h2>1990 г.</h2>
+                            <p>Год постройки дома</p>
+                        </div>
+                        <div>
+                            <h2>585-к</h2>
+                            <p>Серия дома</p>
+                        </div>
+                        <div>
+                            <h2>Кирпич</h2>
+                            <p>Тип дома</p>
+                        </div>
+                        <div>
+                            <h2>16.7<b>&nbsp;млн руб.</b></h2>
+                            <p>Стоимость в объявлении</p>
+                        </div>
+                    </div>
+                    <p class="cian-item-body-text">
+                        Продаётся уютная светлая двухкомнатная квартира рядом с Петрвоским парком. Тихий зелёный район
+                        со всей необходимой инфраструктурой. Пешая доступность до метро Динамо / Петровский парк.
+                        Высокий первый этаж. Квартира оборудована всей необходимой мебелью и техникой: в ванной
+                        установлены джакузи и стиральная машина, на кухне холодильник, посудомоечная машина, газовая
+                        плита, электрический духовой шкаф, измельчитель бытовых отходов. Центральная горячая вода. ДКП 4
+                        года, 1 взрослый собственник. Свободная продажа. Состояние на 4-. Квартира представлена
+                        компанией, входящей в Гилью риэлторов Москвы
+                    </p>
+                    <a>https://www.cian.ru/sale/flat/304873613/</a>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="title">
+                история продажи квартиры
+            </div>
+            <div class="history-item">
+                <p>
+                    *так как у нас нет кадастрового номера, мы можем предположить что эта квартира продавалась ранее по
+                    этим объявлениям:
+                </p>
+                <table class="history-item-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">объявления</th>
+                            <th style="text-align: right;">цена, млн</th>
+                            <th style="text-align: right;">дата публикации</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>май 2022</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>май 2022</td>
+                        </tr>
+                        <tr>
+                            <td><a>https://www.cian.ru/sale/flat/304873613/</a></td>
+                            <td>9.2</td>
+                            <td>май 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="prediction">
+            <div class="title">
+                прогноз продажи квартиры
+            </div>
+            <div class="prediction-body">
+                <div class="prediction-body-item">
+                    <div class="prediction-body-item-header">
+                        <h2>10.6<b>&nbsp;млн руб.</b></h2>
+                        <p>55%</p>
+                    </div>
+                    <div class="prediction-body-item-spectr">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg" style="width: 120px; height: 60px;">
+                            <img src="./assets/Arrow.svg" style="width: 49px; height: 6px;" data-deg="40"
+                                class="rotating-arrow">
+                        </div>
+                    </div>
+                    <p class="prediction-body-item-days">70-120 дней</p>
+                </div>
+                <div class="prediction-body-item">
+                    <div class="prediction-body-item-header">
+                        <h2>10.0<b>&nbsp;млн руб.</b></h2>
+                        <p>75%</p>
+                    </div>
+                    <div class="prediction-body-item-spectr">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg" style="width: 120px; height: 60px;">
+                            <img src="./assets/Arrow.svg" style="width: 49px; height: 6px;" data-deg="100"
+                                class="rotating-arrow">
+                        </div>
+                    </div>
+                    <p class="prediction-body-item-days">55-70 дней</p>
+                </div>
+                <div class="prediction-body-item">
+                    <div class="prediction-body-item-header">
+                        <h2>9.2<b>&nbsp;млн руб.</b></h2>
+                        <p>99%</p>
+                    </div>
+                    <div class="prediction-body-item-spectr">
+                        <div class="spectr">
+                            <img src="./assets/Spectr.svg" style="width: 120px; height: 60px;">
+                            <img src="./assets/Arrow.svg" style="width: 49px; height: 6px;" data-deg="160"
+                                class="rotating-arrow">
+                        </div>
+                    </div>
+                    <p class="prediction-body-item-days">30-50 дней</p>
+                </div>
+            </div>
+        </div>
+        <div class="rate">
+            <div class="title">
+                оценка рыночной стоимости квартиры
+            </div>
+            <div class="rate-body">
+                <h2>15<b>&nbsp;млн ₽</b></h2>
+                <div class="rate-body-progress">
+                    <div class="rate-body-progress-title">
+                        <h3>Низкая</h3>
+                        <h3>Хорошая цена</h3>
+                        <h3>Высокая</h3>
+                    </div>
+                    <div class="rate-body-progress-body">
+                        <div class="rate-body-progress-body-bar"></div>
+                    </div>
+                    <div class="rate-body-progress-footer">
+                        <div class="rate-body-progress-footer-item-left">
+                            <p>10,6 млн ₽</p>
+                        </div>
+                        <div class="rate-body-progress-footer-item-right">
+                            <p>20,4 млн ₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>ID 000000</p>
+            <p>07.08.2024</p>
+        </footer>
+        <script>
+            const arrows = document.querySelectorAll('.rotating-arrow');
 
-    <script>
-        const arrows = document.querySelectorAll('.rotating-arrow');
+            arrows.forEach(arrow => {
+                let deg = arrow.getAttribute('data-deg');
+                arrow.style.transform = `rotate(${deg}deg)`;
+            });
 
-        arrows.forEach(arrow => {
-            let deg = arrow.getAttribute('data-deg');
-            arrow.style.transform = `rotate(${deg}deg)`;
-        });
-    </script>
+            const numberElements = document.querySelectorAll('.formatted-number');
+
+            numberElements.forEach(element => {
+                const number = parseInt(element.textContent, 10);
+                element.textContent = number.toLocaleString('ru-RU');
+            });
+        </script>
 </body>
 
 </html>
